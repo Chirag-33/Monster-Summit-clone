@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.scylladb.com/wp-content/uploads/Rumi-Group-scaled-1-1899x2048.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .register-center{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10%;
+        }
+
+        .register-card {
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+            max-width: 400px;
+            width: 100%;
+            margin-top: 10%;
+        }
+
+        .register-card h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .register-card label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .register-card input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .register-card button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .register-card button:hover {
+            background-color: #0056b3;
+        }
+
+        .register-card h4{
+            display: flex;
+            justify-content: center;
+        }
+        .register-card a{
+            text-decoration: none;
+            color: black;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'core/navbar.html' %}
+    <div class="register-center">
+        <div class="register-card">
+            <h2>Register</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <label for="username">Username</label>
+                {{ form.username }}
+                <label for="password">Password</label>
+                {{ form.password1 }}
+                <label for="confirm-password">Confirm Password</label>
+                {{ form.password2 }}
+                <button type="submit">Register</button>
+            </form>
+    
+            <h4>Already have an account ?</h4>
+            <a href="{% url 'login' %}" style="text-decoration: none; color: #007BFF;"> Login</a>
+        </div>
+    </div>
+
+
+    {% include 'core/footer.html' %}
+</body>
+</html>

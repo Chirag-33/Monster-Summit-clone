@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Detail</title>
+    <link rel="stylesheet" href="{% static 'core/speaker_detail.css' %}">
+</head>
+<body>
+    {% include 'core/navbar.html' %}
+    <div class="speaker-contain">
+        <div class="speaker-card">
+            <div class="speaker-header">
+                <img src="{{ speaker.photo }}" alt="{{ speaker.name }}" class="speaker-photo">
+                <div class="speaker-info">
+                    <h2>{{ speaker.name }}</h2>
+                    <h3>{{ speaker.position }}</h3>
+                </div>
+                <img src="{{ speaker.company_logo}}" alt="Company Logo" class="company-logo">
+            </div>
+            <div class="speaker-bio">
+                <h3>About {{ speaker.name }}</h3>
+                <p>{{ speaker.bio }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

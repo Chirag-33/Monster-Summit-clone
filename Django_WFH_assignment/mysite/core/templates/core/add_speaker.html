@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add speaker</title>
+    <style>
+        body{
+            background-image: url('https://www.scylladb.com/wp-content/uploads/Rumi-Group-scaled-1-1899x2048.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        .speaker-container{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid white;
+            border-radius: 30px;
+            background-color: #000000;
+            width: 30%;
+            height: 60vh;
+            margin-left: 34%;
+            margin-bottom: 10%;
+            align-items: center;
+        }
+
+        .speaker-container input {
+            margin: 10px;
+        }
+
+        .speaker-container button{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+ 
+    {% include 'core/navbar.html' %}
+    <div>
+        <div class="speaker-container">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+    {% include 'core/footer.html' %}
+
+    
+</body>
+</html>

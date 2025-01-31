@@ -1,0 +1,270 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'core/home.css' %}">
+    <style>
+        .navbar-margin-center{
+            margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+
+    {% include 'core/navbar.html' %}
+    <div class="navbar-margin-center">
+        <div class="main-text"  >
+            <div class="main-text-1">
+                <H1>MONSTER SCALE</H1>
+            </div>
+            <div class="main-text-2">
+                <h1>Extreme scale engineering</h1>
+            </div>
+            <div class="main-text-2">
+                <h1>ONLINE | MARCH 11-12, 2025
+                </h1>
+            </div>
+            <div>
+                <a href="{% url 'register' %}" style="text-decoration: none; color: whitesmoke; border: 2px solid white; padding: 10px; border-radius: 20px; background-image: linear-gradient(to right red,blue); ">REGISTER FREE</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tech-container">
+        <div class="tech-border">
+            <h1>Tech Talks</h1>
+            <p>Discover how your peers are approaching real-time engineering challenges at massive scale.</p>
+        </div>
+        <div class="tech-border">
+            <h1>Community</h1>
+            <p>Connect with other engineers designing, implementing, and optimizing systems that are pushed to their limits.</p>
+        </div>
+        <div class="tech-border">
+            <h1>Hands-on</h1>
+            <p>Roll up your sleeves and master best practices for predictable low latency at high throughput.</p>
+        </div>
+    </div>
+
+    <div class="language-scroll"> 
+        <div class="scroll-content">
+            <ul>
+                <li>Data-Intensive Applications </li>
+                <li>RUST</li>
+                <li>EXTREME SCALE</li>
+                <li>HANDS ON LAB</li>
+                <li>ENGINEERING DEEP DIVE</li>
+                <li>GLOBAL</li>
+                <li>ONLINE</li>
+                <li>AI/ML</li>
+                <li>March 11-12,2025</li>
+                <!-- Duplicate content for seamless loop -->
+                <li>Data-Intensive Applications </li>
+                <li>RUST</li>
+                <li>EXTREME SCALE</li>
+                <li>HANDS ON LAB</li>
+                <li>ENGINEERING DEEP DIVE</li>
+                <li>GLOBAL</li>
+                <li>ONLINE</li>
+                <li>AI/ML</li>
+                <li>March 11-12,2025</li>
+                <li>Data-Intensive Applications </li>
+                <li>RUST</li>
+                <li>EXTREME SCALE</li>
+                <li>HANDS ON LAB</li>
+                <li>ENGINEERING DEEP DIVE</li>
+                <li>GLOBAL</li>
+                <li>ONLINE</li>
+                <li>AI/ML</li>
+                <li>March 11-12,2025</li>
+            </ul>
+        </div>
+    </div>
+    
+
+    </div>
+
+    <h1 style="text-align: center; font-size: 45px; margin-top: 20vh; margin-bottom: 20px;">Featured Speakers</h1>
+    <div id="Speaker" class="speaker-container">
+        
+        {% for speakers in speaker %}
+            <div class="speaker-wrapper">
+                <div class="speaker-card" style="background-image: url('{{ speakers.background_img }}');">
+
+                    <div class="company-logo">
+                        <img src="{{speakers.company_logo}}" alt="company-logo">
+                    </div>
+                    <div class="speaker-photo">
+                        <a href="{% url 'speaker_detail' slug=speakers.slug %}">
+                            <img src="{{speakers.photo}}" alt="speaker-photo">
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="speaker-name">
+                    <h3>{{ speakers.name }}</h3>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    
+
+
+ 
+    
+
+
+
+    <div id="Schedule" class="Schedule">
+        <div>
+            <h1 class="Schedule-heading"><b>Past Speakers</b></h1>
+        </div>
+        <div class="Past_speakers-text">
+           <h4> Monster SCALE Summit is the next evolution of ScyllaDB Summit, which has featured <br> speakers from these organizations. </h4>
+        </div>
+    </div>
+
+    <div class="stock-ticker">
+        <div class="ticker-content">
+            <img src="https://yt3.ggpht.com/a-/AAuE7mCGhcRErEqA2Gl9yPUZDzgimzQrXVeb_DsYcw=s900-mo-c-c0xffffffff-rj-k-no" alt="">
+            <img src="https://logos-download.com/wp-content/uploads/2016/04/Tencent_logo_logotype_emblem_2.png" alt="">
+            <img src="https://th.bing.com/th/id/OIP.JhKN2_hCRieTlWzFOyfaxwHaHa?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://logos-world.net/wp-content/uploads/2020/11/Hulu-Logo-2014-2017.png" alt="">
+            <img src="https://th.bing.com/th/id/OIP.IoOTrrB6Cpqumon37UabWwHaF_?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://www.adgully.com/img/800/201906/zee5.jpg" alt="">
+            <img src="https://logos-world.net/wp-content/uploads/2020/10/Comcast-Emblem.jpg" alt="">
+            <img src="https://logodix.com/logo/405859.png" alt="">
+            <img src="https://th.bing.com/th/id/OIP.7ymWvFuGa-uStw8eHz6QIAHaEK?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://logo-marque.com/wp-content/uploads/2021/03/Ticketmaster-Logo.png" alt="">
+            <img src="https://th.bing.com/th/id/OIP.GeoxHwH4aTcsI8BEc5xIlwHaCh?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://yt3.ggpht.com/a-/AAuE7mCGhcRErEqA2Gl9yPUZDzgimzQrXVeb_DsYcw=s900-mo-c-c0xffffffff-rj-k-no" alt="">
+            <img src="https://logos-download.com/wp-content/uploads/2016/04/Tencent_logo_logotype_emblem_2.png" alt="">
+            <img src="https://th.bing.com/th/id/OIP.JhKN2_hCRieTlWzFOyfaxwHaHa?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://logos-world.net/wp-content/uploads/2020/11/Hulu-Logo-2014-2017.png" alt="">
+            <img src="https://th.bing.com/th/id/OIP.IoOTrrB6Cpqumon37UabWwHaF_?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://www.adgully.com/img/800/201906/zee5.jpg" alt="">
+            <img src="https://logos-world.net/wp-content/uploads/2020/10/Comcast-Emblem.jpg" alt="">
+            <img src="https://logodix.com/logo/405859.png" alt="">
+            <img src="https://th.bing.com/th/id/OIP.7ymWvFuGa-uStw8eHz6QIAHaEK?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://logo-marque.com/wp-content/uploads/2021/03/Ticketmaster-Logo.png" alt="">
+            <img src="https://th.bing.com/th/id/OIP.GeoxHwH4aTcsI8BEc5xIlwHaCh?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://yt3.ggpht.com/a-/AAuE7mCGhcRErEqA2Gl9yPUZDzgimzQrXVeb_DsYcw=s900-mo-c-c0xffffffff-rj-k-no" alt="">
+            <img src="https://logos-download.com/wp-content/uploads/2016/04/Tencent_logo_logotype_emblem_2.png" alt="">
+            <img src="https://th.bing.com/th/id/OIP.JhKN2_hCRieTlWzFOyfaxwHaHa?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://logos-world.net/wp-content/uploads/2020/11/Hulu-Logo-2014-2017.png" alt="">
+            <img src="https://th.bing.com/th/id/OIP.IoOTrrB6Cpqumon37UabWwHaF_?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://www.adgully.com/img/800/201906/zee5.jpg" alt="">
+            <img src="https://logos-world.net/wp-content/uploads/2020/10/Comcast-Emblem.jpg" alt="">
+            <img src="https://logodix.com/logo/405859.png" alt="">
+            <img src="https://th.bing.com/th/id/OIP.7ymWvFuGa-uStw8eHz6QIAHaEK?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://logo-marque.com/wp-content/uploads/2021/03/Ticketmaster-Logo.png" alt="">
+            <img src="https://th.bing.com/th/id/OIP.GeoxHwH4aTcsI8BEc5xIlwHaCh?rs=1&pid=ImgDetMain" alt="">
+
+        </div>
+    </div>
+    
+
+
+
+
+    <div class="Schedule">
+        <div class="Schedule-heading">
+            <h2><b>Schedule</b></h2>
+        </div>
+        <div class="Schedule-text">
+            30+ interactive sessions that explore “monster scale” challenges related to ScyllaDB, <br> the monstrously fast database, and broader at-scale engineering feats. Industry experts <br> share emerging trends, architecture deep dives, experience reports, <br> infrastructure innovations, and hands-on labs.
+        </div>
+        
+        <div class="schedule-container">
+            {% for item in schedule %}
+                <div class="schedule-border">
+                    <div>
+                        <h2>Day</h2> 
+                        <h1 class="schedule-day" >{{item.day}}</h1>
+                    </div>
+                    <div>
+                        <h3 class="schedule-date "> {{item.date}} </h3>
+                        <div class="schedule-details" >
+                            <p><strong>7:30 AM PT:</strong> {{ item.timing_1 }}</p><hr>
+                            <p><strong>8:00 AM - 10:00 AM PT:</strong> {{ item.timing_2 }}</p><hr>
+                            <p><strong>10:00 AM - 12:15 PM PT:</strong> {{ item.timing_3 }}</p><hr>
+                            <p><strong>12:15 PM - 1:00 PM PT:</strong> {{ item.timing_4 }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="comment-carousel">
+        <button class="arrow left-arrow">&lt;</button> <!-- Left Arrow -->
+        <div class="comment-display">
+            {% for comments in comment %}
+                <div class="comment-container">
+                    <p>{{ comments.text }}</p>
+                    
+                    <div class="comment-image">
+                        <img src="{{ comments.profile.profile_picture }}" alt="{{ comments.profile.name }}">
+                        <p><strong>{{ comments.profile.name }}</strong></p>
+                        <p><strong>{{ comments.profile.email }}</strong></p>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No comments available.</p>
+            {% endfor %}
+        </div>
+        <button class="arrow right-arrow">&gt;</button> 
+    </div>
+    
+
+    
+    <a href="{% url 'user_comment' %}" style="text-decoration: none; color: white; display: flex; justify-content: center; margin-top: 3%; font-size: 20px; border: 2px solid white; padding: 10px; border-radius: 30px; width: fit-content; margin-left: 45%;">Add a Comment</a>
+    
+    
+   
+
+    <div id="About"  class="About-us about-gap">
+        <h1 class="about_core"><b>Why Attend Monster Scale Summit </b></h1>
+        <h3 class="about-gap" id="About_text">The Monster Scale Summit community is all about discussing strategies for <br> meeting performance expectations at extreme scale. Whether you’re <br> designing, implementing, or optimizing systems that are pushed to their <br> limits, we’d love to hear about your most impressive achievements and <br> lessons learned.</h3>
+        <h2 class="about_core">Core topics include:</h2>
+        <div class="border-flex  ">
+            <div class="border">
+                Distributed databases
+                
+            </div>
+            <div class="border">
+                Streaming and real-time processing
+            </div>
+        </div>
+        <div class="border-flex">
+            <div class="border" >
+                intriguing systems designs
+            </div>
+            <div class="border" >
+                SRE techniques proven at scale
+            </div>
+        </div>
+
+        <div class="border about-border-gap">
+            Methods for balancing latency/concurrency/throughput
+        </div>
+
+        <div class="border about-border-gap ">
+            Infrastructure built for unprecedented demands
+        </div>
+        
+    </div>
+
+
+    {% for speakers in speaker %}
+
+    {% endfor %}
+    {% include 'core/footer.html' %}
+    <script src="{% static 'js/script.js' %}" ></script>
+</body>
+</html>

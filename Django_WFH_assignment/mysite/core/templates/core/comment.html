@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+    <style>
+        body{
+            background-image: url('https://www.scylladb.com/wp-content/uploads/Rumi-Group-scaled-1-1899x2048.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh;
+            color: white;
+        }
+
+        
+
+        .Comment-container{
+            display: flex;
+            justify-content: center;
+        }
+
+        .Comment-margin{
+            margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+    {% include "core/navbar.html" %}
+    <div class="Comment-container">
+        <div class="Comment-margin">
+            <form action="", method="POST">
+                {% csrf_token %}
+                <label for="Comment">comment</label>
+                {{form.text}}
+                <button type="submit">Comment</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
